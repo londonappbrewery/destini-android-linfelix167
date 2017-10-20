@@ -29,11 +29,24 @@ public class MainActivity extends AppCompatActivity {
         mbuttonTop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mstoryTextView.setText(R.string.T3_Story);
-                mbuttonTop.setText(R.string.T3_Ans1);
-                mbuttonBottom.setText(R.string.T3_Ans2);
+                if(mStoryIndex == 1) {
+                    mstoryTextView.setText(R.string.T3_Story);
+                    mbuttonTop.setText(R.string.T3_Ans1);
+                    mbuttonBottom.setText(R.string.T3_Ans2);
+                    mStoryIndex = 3;
 
-                
+                } else if(mStoryIndex == 2) {
+                    mstoryTextView.setText(R.string.T3_Story);
+                    mbuttonTop.setText(R.string.T3_Ans1);
+                    mbuttonBottom.setText(R.string.T3_Ans2);
+                    mStoryIndex = 3;
+
+                } else if (mStoryIndex == 3) {
+                    mstoryTextView.setText(R.string.T6_End);
+                    mbuttonTop.setVisibility(View.GONE);
+                    mbuttonBottom.setVisibility(View.GONE);
+                    mStoryIndex = 6;
+                }
             }
         });
 
@@ -41,11 +54,24 @@ public class MainActivity extends AppCompatActivity {
         mbuttonBottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mstoryTextView.setText(R.string.T2_Story);
-                mbuttonTop.setText(R.string.T2_Ans1);
-                mbuttonBottom.setText(R.string.T2_Ans2);
+                if(mStoryIndex == 1) {
+                    mstoryTextView.setText(R.string.T2_Story);
+                    mbuttonTop.setText(R.string.T2_Ans1);
+                    mbuttonBottom.setText(R.string.T2_Ans2);
+                    mStoryIndex = 2;
 
+                } else if(mStoryIndex == 3) {
+                    mstoryTextView.setText(R.string.T5_End);
+                    mbuttonTop.setVisibility(View.GONE);
+                    mbuttonBottom.setVisibility(View.GONE);
+                    mStoryIndex = 5;
 
+                } else if (mStoryIndex == 2) {
+                    mstoryTextView.setText(R.string.T4_End);
+                    mbuttonTop.setVisibility(View.GONE);
+                    mbuttonBottom.setVisibility(View.GONE);
+                    mStoryIndex = 4;
+                }
             }
         });
     }
